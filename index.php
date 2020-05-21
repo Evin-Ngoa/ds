@@ -1,8 +1,4 @@
 <?php
-   $database = include('config.php');
-   echo "MYSQL = " . $database['mysql']['port']; // 'localhost'
-   echo "POSTGRES = " . $database['pgsql']['port']; // 'localhost'
-   echo "\n";
 
 $county = "Kenya";
 
