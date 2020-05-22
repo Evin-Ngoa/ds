@@ -21,7 +21,7 @@ function seedMysqlF5F6Table($database)
 
     $f5_sql = "INSERT INTO F5 (id, region, country_name )VALUES(234, 'West', 'Nigeria')";
     $f5_sql2 = "INSERT INTO F5 (id, region, country_name )VALUES(227, 'West', 'Niger')";
-    $f5_sql3 = "INSERT INTO F5 (id, region, country_name )VALUES(232, 'West', 'Sierra Leone')";
+    $f5_sql3 = "INSERT INTO F5 (id, region, country_name )VALUES(232, 'West', 'Sierra-Leone')";
     $f5_sql4 = "INSERT INTO F5 (id, region, country_name )VALUES(221, 'West', 'Senegal')";
     $f5_sql5 = "INSERT INTO F5 (id, region, country_name )VALUES(233, 'West', 'Ghana')";
 
@@ -107,7 +107,7 @@ function seedPsqlF1F2F3F4Table($database)
         VALUES (263, 'South', 'Zimbabwe' );
         
         INSERT INTO F3 (ID,  REGION, COUNTRY_NAME )
-        VALUES (27, 'South', 'South Africa' );
+        VALUES (27, 'South', 'South-Africa' );
         
         INSERT INTO F3 (ID,  REGION, COUNTRY_NAME )
         VALUES (267, 'South', 'Botswana' );
