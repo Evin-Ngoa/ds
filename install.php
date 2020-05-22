@@ -1,4 +1,6 @@
 <?php
+header('Content-type: text/plain');
+
 $database = include('config.php');
 
 include('db_migrate.php');
