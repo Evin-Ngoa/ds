@@ -17,6 +17,8 @@ if (isset($_GET['country'])) {
 
 $query = "SELECT * FROM covid WHERE country_name = " . $county . "";
 
+echo "<a href='./countries.php?country=Kenya' target='_blank'>Begin Here</a> <br><br>";
+
 echo "<a href='./index.php?country=Kenya'>Kenya</a> <br>";
 echo "<a href='./index.php?country=Uganda'>Uganda</a> <br>";
 echo "<a href='./index.php?country=Tanzania'>Tanzania</a> <br>";
