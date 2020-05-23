@@ -11,11 +11,13 @@ function seedMysqlF5F6Table($database)
     $user = $database['mysql']['username'];
     $pass = $database['mysql']['password'];
     $dbname = $database['mysql']['database'];
+    $status = 0;
 
     $conn = mysqli_connect($host, $user, $pass, $dbname);
 
     // Check connection
     if ($conn->connect_error) {
+        $status = 0;
         die("Connection failed in seeding Mysql: " . $conn->connect_error);
     }
 
@@ -38,8 +40,10 @@ function seedMysqlF5F6Table($database)
         mysqli_query($conn, $f5_sql4) &&
         mysqli_query($conn, $f5_sql5)
     ) {
+        $status = 1;
         echo "\n New records f5 created successfully \n";
     } else {
+        $status = 0;
         echo "Error: " . mysqli_error($conn);
     }
 
@@ -50,12 +54,16 @@ function seedMysqlF5F6Table($database)
         mysqli_query($conn, $f6_sql4) &&
         mysqli_query($conn, $f6_sql5)
     ) {
+        $status = 1;
         echo "\n New records f6 created successfully \n";
     } else {
+        $status = 0;
         echo "Error: " . mysqli_error($conn);
     }
 
     $conn->close();
+
+    return $status;
 }
 
 
@@ -70,12 +78,15 @@ function seedPsqlF1F2F3F4Table($database)
     $psqlPort = "port = ". $database['pgsql']['port'];
     $psqlDbname = "dbname = ". $database['pgsql']['database'];
     $credentials = "user = ". $database['pgsql']['username'] ." password=". $database['pgsql']['password'];
+    $status = 0;
 
     $db = pg_connect( "$psqlHost $psqlPort $psqlDbname $credentials");
 
     if (!$db) {
+        $status = 0;
         echo "Error : Unable to open database in seeding Postgres\n";
     } else {
+        $status = 1;
         echo "Opened database successfully\n";
     }
 
@@ -131,9 +142,13 @@ function seedPsqlF1F2F3F4Table($database)
 
     $ret = pg_query($db, $sql);
     if (!$ret) {
+        $status = 0;
         echo pg_last_error($db);
     } else {
+        $status = 1;
         echo "Records created successfully\n";
     }
     pg_close($db);
+    
+    return $status;
 }
