@@ -12,10 +12,18 @@ $county = "Mozambique";
 if (isset($_GET['country'])) {
 	$county = $_GET['country'];
 } else {
-	$county = "";
+	$county = "Kenya";
 }
 
-$query = "SELECT * FROM covid WHERE country_name = " . $county . "";
+// Check if Get Exists
+if (isset($_GET['region'])) {
+	$region = $_GET['region'];
+} else {
+	$region = "East";
+}
+
+// $query = "SELECT * FROM covid WHERE country_name = " . $county . "";
+$query = "SELECT * FROM covid WHERE region = " . $region . "";
 
 echo "<a href='./countries.php?country=Kenya' target='_blank'>Begin Here</a> <br><br>";
 
@@ -31,7 +39,11 @@ echo "<a href='./index.php?country=Nigeria'>Nigeria</a> <br>";
 echo "<a href='./index.php?country=Niger'>Niger</a> <br>";
 echo "<a href='./index.php?country=Sierra-Leone'>Sierra Leone</a> <br>";
 echo "<a href='./index.php?country=Senegal'>Senegal</a> <br>";
-echo "<a href='./index.php?country=Ghana'>Ghana</a> <br>";
+echo "<a href='./index.php?country=Ghana'>Ghana</a> <br><br>";
+
+echo "<a href='./index.php?region=East'>East</a> <br>";
+echo "<a href='./index.php?region=West'>West</a> <br>";
+echo "<a href='./index.php?region=South'>South</a> <br>";
 
 // $query = "SELECT region,country_name FROM covid WHERE country_name = ".$county."";
 echo "GLOBAL QUERY : " . $query . "\n <br> <br>";
