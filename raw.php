@@ -130,6 +130,7 @@ function displayResults($projection, $selection, $siteFragment, $site, $database
 	// Delete the last element as it contains count number
 	array_pop($projection);
 	array_pop($selection);
+	
 	$localQuery = localQueryTransformer($projection, $selection, $siteFragment);
 
 	$fragmentsArr = array('f1', 'f2', 'f3', 'f4', 'f5', 'f6');
@@ -501,6 +502,7 @@ function QueryDecomposer($calculusQuery)
  */
 function algebraicTransformer($calculusQuery)
 {
+	// "π * FROM covid σ country_name = "Kenya";
 
 	$projection  = "";
 	$cartesianProduct = "";
@@ -513,6 +515,7 @@ function algebraicTransformer($calculusQuery)
 		if ($index < sizeof($calculusQuery)) {
 			$index = $index + 1;
 		}
+		// π *
 		// var_dump($projection);
 	}
 
@@ -525,6 +528,7 @@ function algebraicTransformer($calculusQuery)
 		if ($index < sizeof($calculusQuery)) {
 			$index = $index + 1;
 		}
+		// covid
 		// var_dump($cartesianProduct);
 	}
 
@@ -534,6 +538,7 @@ function algebraicTransformer($calculusQuery)
 		if ($index < sizeof($calculusQuery)) {
 			$index = $index + 1;
 		}
+		// country_name = "Kenya"
 		// var_dump($selection);
 	}
 

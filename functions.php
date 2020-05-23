@@ -81,7 +81,7 @@ function displayResults($projection, $selection, $siteFragment, $site, $database
         echo "\n <br> LOCAL QUERY : <b>" . $localQuery . "</b> <br>";
 
 		while ($row = mysqli_fetch_assoc($data)) {
-			$countryId = $row["id"];
+			$countryId = $row["cid"];
 
 			$localForeignQuery = localQueryForeignKeyTransformer($projection, $selection, $fragmentsArr[$nextFragment], $countryId);
 			echo "\n <br> LOCAL Next QUERY : <b>" . $localForeignQuery ."</b> \n <br>";
@@ -91,7 +91,7 @@ function displayResults($projection, $selection, $siteFragment, $site, $database
 
                 echo "<tr>";                          
                     echo "<td>";
-                        echo "<div class='text-muted'>" . $row["id"] . "</div>";
+                        echo "<div class='text-muted'>" . $row["cid"] . "</div>";
                     echo "</td>";
                     echo "<td>";
                         echo "<div class='text-muted'>" . $row["region"] . "</div>";
@@ -144,13 +144,13 @@ function displayResults($projection, $selection, $siteFragment, $site, $database
                     echo "<div class='text-muted'>" . $row[2] . "</div>";
                 echo "</td>";
                 echo "<td>";
+                    echo "<div class='text-muted'>" . $foreign_row[1] . "</div>";
+                echo "</td>";
+                echo "<td>";
                     echo "<div class='text-muted'>" . $foreign_row[2] . "</div>";
                 echo "</td>";
                 echo "<td>";
                     echo "<div class='text-muted'>" . $foreign_row[3] . "</div>";
-                echo "</td>";
-                echo "<td>";
-                    echo "<div class='text-muted'>" . $foreign_row[4] . "</div>";
                 echo "</td>";
             
                 echo "</tr>";
