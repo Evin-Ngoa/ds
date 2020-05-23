@@ -100,19 +100,19 @@ $query = "SELECT * FROM covid WHERE country_name = " . $county . "";
                                                 <div class="col-lg-7 align-self-center">
                                                     <div class="text-lg-center mt-4 mt-lg-0">
                                                         <div class="row">
-                                                            <div class="col-4">
+                                                            <div class="col-6">
                                                                 <div>
                                                                     <p class="text-muted text-truncate mb-2">Regions</p>
                                                                     <h5 class="mb-0">3</h5>
                                                                 </div>
                                                             </div>
-                                                            <div class="col-4">
+                                                            <div class="col-6">
                                                                 <div>
                                                                     <p class="text-muted text-truncate mb-2">Countries</p>
                                                                     <h5 class="mb-0">13</h5>
                                                                 </div>
                                                             </div>
-                                                            <div class="col-4">
+                                                            <div class="col-4" style="display: none;">
                                                                 <div>
                                                                     <p class="text-muted text-truncate mb-2">Clients</p>
                                                                     <h5 class="mb-0">18</h5>
