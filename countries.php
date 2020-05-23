@@ -11,7 +11,7 @@ $county = "Mozambique";
 if (isset($_GET['country'])) {
 	$county = $_GET['country'];
 } else {
-	$county = "";
+	$county = "Kenya";
 }
 
 $query = "SELECT * FROM covid WHERE country_name = " . $county . "";
@@ -232,6 +232,18 @@ $query = "SELECT * FROM covid WHERE country_name = " . $county . "";
                                             <p class="text-muted">West</p>
                                         </div>
                                     </a>
+
+                                    
+                                </div>
+
+                                <h6 class="mt-4">Menu</h6>
+
+                                <div class="mt-2">
+                                    <div class="btn-group-vertical" role="group" aria-label="Vertical button group">
+                                        <a href="./index.php" class="btn btn-secondary"> Dashboard </a>
+                                        <a href="./countries.php?country=Kenya" class="btn btn-secondary"> Countries Statistics </a>
+                                        <a href="./regions.php?region=East" class="btn btn-secondary"> Regional Statistics </a>
+                                    </div>
                                 </div>
                             </div>
                             <!-- End Left sidebar -->
