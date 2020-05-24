@@ -1,0 +1,46 @@
+psql -U postgres -h localhost	
+#U(username) h(database)
+
+create database mydb;
+
+\q			
+#exit
+\l   			
+#list databases
+\dt			
+#display tables
+create user hesbon with password 'mypass';
+
+\c mydb;		#connect to 'mydb' 
+
+create schema friends;
+
+create table friends.test( firstname CHAR(15), lastname CHAR(20));
+
+select * from friends.test;
+
+\d friends.test 	#check friends schema
+
+insert into friends.test values ( 'Mike', 'Smith');
+
+select * from friends.test;
+
+alter table corona_Africa.country_data alter column countryname type CHAR(20);
+
+delete from table where condition;
+
+#deleting duplicates, keep one(not working)
+DELETE FROM corona_Africa.country_data a USING ( SELECT MIN(ctid) as ctid, key FROM corona_Africa.country_data GROUP BY key HAVING COUNT(*) > 1 ) b
+      WHERE a.key = b.key 
+      AND a.ctid <> b.ctid;
+
+
+#remote machine
+https://computingforgeeks.com/install-postgresql-12-on-ubuntu/
+
+#wsl postgres db start
+pg_ctlcluster 12 main start
+
+
+QUESTION:
+??connect postgresql to remote machine
